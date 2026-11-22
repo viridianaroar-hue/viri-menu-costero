@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puerto A&M Gourmet — Menú Costero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--petrol:#0F3B4C;--petrol-dark:#0A2A36;--gold:#C9A227;--warm:#F7F5F0;--white:#fff;--muted:#6B7280;--border:#E5E1D8;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui,sans-serif;background:var(--warm);color:#1F2933;}
+.hero{background:linear-gradient(135deg,var(--petrol-dark),var(--petrol));color:#fff;padding:60px 24px;text-align:center;}
+.hero h1{font-family:Playfair Display,serif;font-size:42px;margin-bottom:8px;}
+.hero p{opacity:.85;font-size:16px;}
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+.section{padding:40px 0;}
+.section h2{font-family:Playfair Display,serif;font-size:28px;color:var(--petrol-dark);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:6px;margin-bottom:24px;}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.menu-item{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(15,59,76,.06);}
+.menu-item .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.menu-item .name{font-weight:600;font-size:17px;color:var(--petrol-dark);}
+.menu-item .price{font-weight:700;color:var(--gold);font-size:16px;}
+.menu-item .desc{font-size:13.5px;color:var(--muted);line-height:1.5;}
+.menu-item .tag{display:inline-block;margin-top:8px;font-size:11px;background:var(--warm);color:var(--petrol);padding:2px 8px;border-radius:999px;}
+@media(max-width:640px){.menu-grid{grid-template-columns:1fr;}.hero h1{font-size:32px;}}
+.footer{text-align:center;padding:30px 20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>Menú Costero</h1>
+  <p>Puerto A&M Gourmet · Paraíso, Tabasco · Sabores del mar</p>
+</div>
+<div class="container">
+  <div class="section">
+    <h2>Entradas</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="head"><span class="name">Ceviche de Camarón</span><span class="price">$165</span></div><div class="desc">Camarón fresco marinado en limón con jitomate, cebolla morada, cilantro y aguacate.</div><span class="tag">Fresco</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Sopa de Mariscos</span><span class="price">$140</span></div><div class="desc">Caldo rico con camarón, pulpo, jaiba y pescado del día.</div><span class="tag">Caliente</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Tostadas de Atún</span><span class="price">$150</span></div><div class="desc">Atún sellado con salsa de soya, ajonjolí y aguacate sobre tostada crujiente.</div><span class="tag">Fusión</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Coctel de Camarón</span><span class="price">$175</span></div><div class="desc">Camarón cocido en salsa de tomate, limón y especias, servido con galletas saladas.</div><span class="tag">Clásico</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Platillos Fuertes</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="head"><span class="name">Taco de Pescado a la Veracruzana</span><span class="price">$185</span></div><div class="desc">Pescado frito con salsa veracruzana, aceitunas y alcaparras en tortilla de maíz.</div><span class="tag">Especialidad</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Filete de Robalo al Grill</span><span class="price">$320</span></div><div class="desc">Robalo a la parrilla con mantequilla de ajo y hierbas, acompañado de vegetales.</div><span class="tag">Premium</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Camarones al Coco</span><span class="price">$295</span></div><div class="desc">Camarones empanizados en coco, servidos con salsa de mango y chile.</div><span class="tag">Dulce-Salado</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Huachinango a la Talla</span><span class="price">$450</span></div><div class="desc">Huachinango entero marinado en achiote y chile, asado a la leña.</div><span class="tag">Estrella</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Molcajete de Mariscos</span><span class="price">$380</span></div><div class="desc">Camarón, pulpo y pescado en salsa de chile guajillo servido en molcajete caliente.</div><span class="tag">Para compartir</span></div>
+      <div class="menu-item"><div class="head"><span class="name">Enchiladas de Mariscos</span><span class="price">$210</span></div><div class="desc">Tortillas rellenas de mariscos en salsa verde, gratinadas con queso.</div><span class="tag">Tradicional</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Bebidas</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="head"><span class="name">Agua de Horchata</span><span class="price">$45</span></div><div class="desc">Tradicional, con canela y vainilla.</div></div>
+      <div class="menu-item"><div class="head"><span class="name">Limonada Natural</span><span class="price">$55</span></div><div class="desc">Limón fresco con hierbabuena.</div></div>
+      <div class="menu-item"><div class="head"><span class="name">Cerveza Artesanal</span><span class="price">$95</span></div><div class="desc">Selección local del golfo.</div></div>
+      <div class="menu-item"><div class="head"><span class="name">Vino Blanco (copa)</span><span class="price">$180</span></div><div class="desc">Ideal para mariscos.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Postres</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="head"><span class="name">Flan de Coco</span><span class="price">$85</span></div><div class="desc">Flan cremoso con coco rallado.</div></div>
+      <div class="menu-item"><div class="head"><span class="name">Pastel de Chocolate</span><span class="price">$95</span></div><div class="desc">Pastel húmedo con ganache.</div></div>
+      <div class="menu-item"><div class="head"><span class="name">Helado de Vainilla</span><span class="price">$70</span></div><div class="desc">Con frutos rojos.</div></div>
+    </div>
+  </div>
+</div>
+<div class="footer">Menú demo · Puerto A&M Gourmet · Simulación académica (Top Learning) · Todos los precios en MXN</div>
+</body>
+</html>
