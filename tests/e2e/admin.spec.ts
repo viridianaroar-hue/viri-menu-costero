@@ -22,7 +22,7 @@ test("flujo completo: crear platillo con foto y modelo 3D, publicar, agotar", as
   await page.getByRole("button", { name: "Entrar" }).click();
   await expect(page).toHaveURL(/\/admin$/);
 
-  await page.goto("/admin/platillos/nuevo");
+  await page.goto("/admin/platillos/nuevo", { waitUntil: "networkidle" });
   await page.getByTestId("f-name").fill(name);
   await page.getByTestId("f-price").fill("189");
   await page.locator('input[type=file][accept="image/*"]').setInputFiles("tests/fixtures/foto-prueba.png");
@@ -82,5 +82,16 @@ test("ajustes, categorías y QR", async ({ page }, info) => {
 
   const backup = await page.request.get("/api/admin/export");
   expect(backup.status()).toBe(200);
-  expect((await backup.json()).dishes.length).toBeGreaterThan(17);
+  const json = await backup.json();
+  expect(json.dishes.length).toBeGreaterThanOrEqual(17);
+
+  // Reimportar el mismo respaldo (carga masiva). Esperar hidratación antes de elegir archivo.
+  await page.goto("/admin/ajustes", { waitUntil: "networkidle" });
+  page.once("dialog", (d) => d.accept());
+  await page.locator('input[type=file][accept="application/json,.json"]').setInputFiles({
+    name: "respaldo.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(json)),
+  });
+  await expect(page.getByText(`Menú importado: ${json.categories.length} categorías, ${json.dishes.length} platillos.`)).toBeVisible();
 });

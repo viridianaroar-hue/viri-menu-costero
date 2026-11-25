@@ -73,7 +73,7 @@ async function DishContent({ params }: { params: Promise<{ slug: string }> }) {
       </div>
 
       <div className="mx-auto max-w-3xl px-4 pt-5">
-        {category && <p className="text-xs font-semibold tracking-[0.22em] text-accent uppercase">{category.name}</p>}
+        {category && <p className="text-xs font-semibold tracking-[0.22em] text-accent-ink uppercase">{category.name}</p>}
         <div className="mt-1 flex items-start justify-between gap-4">
           <h1 className="font-display text-[1.9rem] leading-tight font-semibold text-brand-dark">{dish.name}</h1>
           <p className="shrink-0 pt-1.5 text-xl font-semibold text-brand" data-testid="dish-price">

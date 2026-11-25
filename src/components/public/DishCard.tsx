@@ -30,7 +30,7 @@ export function DishCard({ dish, currency }: { dish: DishSummary; currency: stri
   return (
     <Link
       href={`/platillo/${dish.slug}`}
-      className={`group flex gap-4 rounded-2xl border border-line bg-card p-3.5 shadow-[0_1px_2px_rgba(10,42,54,.04),0_8px_24px_-12px_rgba(10,42,54,.12)] transition active:scale-[.99] hover:border-accent/50 ${dish.available ? "" : "opacity-60"}`}
+      className={`group flex gap-4 rounded-2xl border border-line bg-card p-3.5 shadow-[0_1px_2px_rgba(10,42,54,.04),0_8px_24px_-12px_rgba(10,42,54,.12)] transition active:scale-[.99] hover:border-accent/50`}
       data-testid="dish-card"
     >
       <div className="min-w-0 flex-1 py-0.5">
@@ -41,7 +41,7 @@ export function DishCard({ dish, currency }: { dish: DishSummary; currency: stri
         <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
           <span className="mr-1 text-[0.95rem] font-semibold text-brand">{formatPrice(dish.price, currency)}</span>
           {!dish.available && (
-            <span className="rounded-full bg-ink/80 px-2 py-0.5 text-[0.68rem] font-medium text-white">Agotado</span>
+            <span className="rounded-full bg-ink px-2 py-0.5 text-[0.68rem] font-medium text-white">Agotado</span>
           )}
           {dish.has3d && (
             <span className="inline-flex items-center gap-1 rounded-full bg-brand/8 px-2 py-0.5 text-[0.68rem] font-semibold text-brand">
@@ -55,7 +55,7 @@ export function DishCard({ dish, currency }: { dish: DishSummary; currency: stri
           ))}
         </div>
       </div>
-      <div className="relative h-[6.5rem] w-[6.5rem] shrink-0 overflow-hidden rounded-xl bg-line">
+      <div className={`relative h-[6.5rem] w-[6.5rem] shrink-0 overflow-hidden rounded-xl bg-line ${dish.available ? "" : "opacity-50 grayscale"}`}>
         <DishMedia photo={dish.photo} name={dish.name} sizes="104px" compact />
         {dish.has3d && (
           <span className="absolute right-1.5 bottom-1.5 grid h-7 w-7 place-items-center rounded-full bg-white/90 text-brand shadow backdrop-blur">

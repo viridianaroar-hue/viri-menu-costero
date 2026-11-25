@@ -19,6 +19,8 @@
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
   --color-accent: var(--accent);
+  /* Variante oscura del acento para TEXTO sobre fondos claros (contraste ≥ 4.5:1). */
+  --color-accent-ink: color-mix(in oklab, var(--accent) 55%, #120c00);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-muted: var(--muted);

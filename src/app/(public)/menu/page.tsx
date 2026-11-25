@@ -18,7 +18,7 @@ export default async function MenuPage() {
     <>
       <header className="mx-auto flex max-w-3xl items-end justify-between px-4 pt-6 pb-1">
         <div>
-          <Link href="/" className="text-xs font-semibold tracking-[0.24em] text-accent uppercase">
+          <Link href="/" className="text-xs font-semibold tracking-[0.24em] text-accent-ink uppercase">
             {menu.settings.restaurantName}
           </Link>
           <h1 className="font-display text-3xl font-semibold text-brand-dark">Menú</h1>

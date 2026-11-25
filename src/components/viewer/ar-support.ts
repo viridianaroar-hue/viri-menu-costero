@@ -24,8 +24,8 @@ export async function detectArPath(): Promise<ArPath> {
 }
 
 export const AR_HELP: Record<ArPath, string> = {
-  "quick-look": "Se abrirá la vista AR de tu iPhone. Apunta a la mesa y mueve el teléfono despacio.",
-  webxr: "Tu navegador pedirá permiso para usar la cámara. Apunta a la mesa y toca para colocar el platillo.",
-  "scene-viewer": "Se abrirá el visor AR de Google. Apunta a la mesa y mueve el teléfono despacio.",
+  "quick-look": "Se abrirá la cámara de tu iPhone: apunta a la mesa y mueve el teléfono despacio.",
+  webxr: "Permite el uso de la cámara, apunta a la mesa y toca para colocar el platillo.",
+  "scene-viewer": "Se abrirá la cámara: apunta a la mesa y mueve el teléfono despacio.",
   none: "La vista en tu mesa requiere un teléfono compatible (iPhone con iOS 12+ o Android con ARCore). Puedes explorar el platillo en 3D aquí.",
 };

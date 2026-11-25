@@ -52,9 +52,15 @@ export function DishViewer({
   // Detección AR y precarga de la librería cuando el navegador esté libre.
   useEffect(() => {
     detectArPath().then(setArPath);
-    const idle = (cb: () => void) =>
-      "requestIdleCallback" in window ? window.requestIdleCallback(cb, { timeout: 3000 }) : (window as Window).setTimeout(cb, 1500);
-    idle(() => void loadModelViewer().catch(() => {}));
+    // Precarga el visor en la primera interacción (toque o scroll): así está listo al tocar «3D»
+    // sin bloquear la carga inicial ni gastar datos de quien solo lee el menú.
+    const events = ["pointerdown", "touchstart", "scroll", "keydown"] as const;
+    const warm = () => {
+      events.forEach((e) => window.removeEventListener(e, warm));
+      void loadModelViewer().catch(() => {});
+    };
+    events.forEach((e) => window.addEventListener(e, warm, { once: true, passive: true }));
+    return () => events.forEach((e) => window.removeEventListener(e, warm));
   }, []);
 
   const start = useCallback(async (wantAR: boolean) => {
@@ -121,6 +127,8 @@ export function DishViewer({
           <div className={`absolute inset-0 transition-opacity duration-500 ${showPhoto ? "opacity-0" : phase === "ready" ? "opacity-100" : "opacity-0"}`}>
             <model-viewer
               ref={attach as unknown as React.Ref<HTMLElement>}
+              loading="eager"
+              reveal="auto"
               src={glbUrl}
               ios-src={usdzUrl}
               alt={`Modelo 3D de ${name}`}
@@ -142,7 +150,6 @@ export function DishViewer({
               auto-rotate=""
               auto-rotate-delay="2500"
               rotation-per-second="12deg"
-              loading="eager"
               data-testid="model-viewer"
             >
               <button
@@ -233,8 +240,9 @@ export function DishViewer({
             {notice ?? AR_HELP.none}
           </p>
         )}
-        {phase === "poster" && arLikely && arPath && (
-          <p className="mt-2 text-center text-[0.72rem] text-muted">{AR_HELP[arPath]}</p>
+        {phase === "poster" && arPath !== "none" && (
+          // Espacio reservado: evita que el contenido salte cuando termina la detección AR.
+          <p className="mt-2 min-h-[2.75em] text-center text-[0.72rem] leading-snug text-muted">{arPath ? AR_HELP[arPath] : ""}</p>
         )}
         {phase === "ready" && canAR === false && !notice && (
           <p className="mt-3 text-center text-[0.75rem] text-muted">Este dispositivo no admite la vista en tu mesa; disfruta el modelo en 3D.</p>

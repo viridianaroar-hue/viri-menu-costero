@@ -53,12 +53,12 @@ const h2 = "mb-4 font-display text-lg font-semibold text-brand-dark";
 
 const splitList = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
 
-export function DishEditor({ dish, categories }: { dish: Dish | null; categories: Category[] }) {
+export function DishEditor({ dish, categories, justSaved = false }: { dish: Dish | null; categories: Category[]; justSaved?: boolean }) {
   const router = useRouter();
   const [d, setD] = useState<Draft>(() => dish ?? emptyDish(categories[0].id));
   const [tagsText, setTagsText] = useState(d.tags.join(", "));
   const [ingText, setIngText] = useState(d.ingredients.join(", "));
-  const [msg, setMsg] = useState<{ type: "ok" | "error"; text: string } | null>(null);
+  const [msg, setMsg] = useState<{ type: "ok" | "error"; text: string } | null>(justSaved ? { type: "ok", text: "Guardado y publicado." } : null);
   const [busy, setBusy] = useState<string | null>(null);
   const [saving, start] = useTransition();
 
@@ -132,10 +132,13 @@ export function DishEditor({ dish, categories }: { dish: Dish | null; categories
         setMsg({ type: "error", text: r.error });
         return;
       }
+      if (d.id === "nuevo") {
+        // La página del platillo recién creado muestra la confirmación (?guardado=1).
+        router.replace(`/admin/platillos/${r.data!.id}?guardado=1`);
+        return;
+      }
       setMsg({ type: "ok", text: "Guardado y publicado." });
-      if (d.id === "nuevo") router.replace(`/admin/platillos/${r.data!.id}`);
-      else router.refresh();
-      setD((x) => ({ ...x, id: r.data!.id, slug: r.data!.slug }));
+      setD((x) => ({ ...x, slug: r.data!.slug }));
     });
   }
 
