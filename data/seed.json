@@ -1,0 +1,594 @@
+{
+  "version": 1,
+  "settings": {
+    "restaurantName": "Puerto A&M Gourmet",
+    "tagline": "Sabores del mar",
+    "location": "Paraíso, Tabasco",
+    "welcomeText": "Explora nuestros platillos en 3D y, si tu teléfono lo permite, míralos sobre tu mesa.",
+    "currency": "MXN",
+    "publicUrl": "",
+    "demoMode": true,
+    "theme": {
+      "primary": "#0F3B4C",
+      "primaryDark": "#0A2A36",
+      "accent": "#C9A227",
+      "surface": "#F7F5F0"
+    },
+    "footerNote": "Contenido de demostración tomado de una simulación académica: platillos y precios no confirmados."
+  },
+  "categories": [
+    {
+      "id": "cat-entradas",
+      "slug": "entradas",
+      "name": "Entradas",
+      "description": "",
+      "order": 0,
+      "visible": true
+    },
+    {
+      "id": "cat-platillos-fuertes",
+      "slug": "platillos-fuertes",
+      "name": "Platillos Fuertes",
+      "description": "",
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": "cat-bebidas",
+      "slug": "bebidas",
+      "name": "Bebidas",
+      "description": "",
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": "cat-postres",
+      "slug": "postres",
+      "name": "Postres",
+      "description": "",
+      "order": 3,
+      "visible": true
+    }
+  ],
+  "dishes": [
+    {
+      "id": "demo-ceviche-de-camaron",
+      "slug": "ceviche-de-camaron",
+      "name": "Ceviche de Camarón",
+      "categoryId": "cat-entradas",
+      "description": "Camarón fresco marinado en limón con jitomate, cebolla morada, cilantro y aguacate.",
+      "price": 165,
+      "photos": [],
+      "model": {
+        "glbUrl": "/models/demo/plato-llano-27cm.glb",
+        "status": "publicado",
+        "source": "demo",
+        "notes": "Plato llano vacío de 27 cm para validar escala y AR. No representa el platillo."
+      },
+      "dimensions": {
+        "diameterCm": 27,
+        "heightCm": 2.6,
+        "verified": false,
+        "notes": "Medida de ejemplo. Falta medir la vajilla real."
+      },
+      "available": true,
+      "featured": true,
+      "tags": [
+        "Fresco"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 0,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-sopa-de-mariscos",
+      "slug": "sopa-de-mariscos",
+      "name": "Sopa de Mariscos",
+      "categoryId": "cat-entradas",
+      "description": "Caldo rico con camarón, pulpo, jaiba y pescado del día.",
+      "price": 140,
+      "photos": [],
+      "model": {
+        "glbUrl": "/models/demo/tazon-caldo-18cm.glb",
+        "status": "publicado",
+        "source": "demo",
+        "notes": "Tazón de 18 cm con superficie de caldo genérica. No representa el platillo."
+      },
+      "dimensions": {
+        "diameterCm": 18,
+        "heightCm": 7.5,
+        "verified": false,
+        "notes": "Medida de ejemplo. Falta medir la vajilla real."
+      },
+      "available": true,
+      "featured": true,
+      "tags": [
+        "Caliente"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": true
+      },
+      "order": 1,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-tostadas-de-atun",
+      "slug": "tostadas-de-atun",
+      "name": "Tostadas de Atún",
+      "categoryId": "cat-entradas",
+      "description": "Atún sellado con salsa de soya, ajonjolí y aguacate sobre tostada crujiente.",
+      "price": 150,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Fusión"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 2,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-coctel-de-camaron",
+      "slug": "coctel-de-camaron",
+      "name": "Coctel de Camarón",
+      "categoryId": "cat-entradas",
+      "description": "Camarón cocido en salsa de tomate, limón y especias, servido con galletas saladas.",
+      "price": 175,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Clásico"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 3,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-taco-de-pescado-a-la-veracruzana",
+      "slug": "taco-de-pescado-a-la-veracruzana",
+      "name": "Taco de Pescado a la Veracruzana",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Pescado frito con salsa veracruzana, aceitunas y alcaparras en tortilla de maíz.",
+      "price": 185,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Especialidad"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 0,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-filete-de-robalo-al-grill",
+      "slug": "filete-de-robalo-al-grill",
+      "name": "Filete de Robalo al Grill",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Robalo a la parrilla con mantequilla de ajo y hierbas, acompañado de vegetales.",
+      "price": 320,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Premium"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 1,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-camarones-al-coco",
+      "slug": "camarones-al-coco",
+      "name": "Camarones al Coco",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Camarones empanizados en coco, servidos con salsa de mango y chile.",
+      "price": 295,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Dulce-Salado"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 2,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-huachinango-a-la-talla",
+      "slug": "huachinango-a-la-talla",
+      "name": "Huachinango a la Talla",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Huachinango entero marinado en achiote y chile, asado a la leña.",
+      "price": 450,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": true,
+      "tags": [
+        "Estrella"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 3,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-molcajete-de-mariscos",
+      "slug": "molcajete-de-mariscos",
+      "name": "Molcajete de Mariscos",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Camarón, pulpo y pescado en salsa de chile guajillo servido en molcajete caliente.",
+      "price": 380,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Para compartir"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 4,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-enchiladas-de-mariscos",
+      "slug": "enchiladas-de-mariscos",
+      "name": "Enchiladas de Mariscos",
+      "categoryId": "cat-platillos-fuertes",
+      "description": "Tortillas rellenas de mariscos en salsa verde, gratinadas con queso.",
+      "price": 210,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [
+        "Tradicional"
+      ],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 5,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-agua-de-horchata",
+      "slug": "agua-de-horchata",
+      "name": "Agua de Horchata",
+      "categoryId": "cat-bebidas",
+      "description": "Tradicional, con canela y vainilla.",
+      "price": 45,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 0,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-limonada-natural",
+      "slug": "limonada-natural",
+      "name": "Limonada Natural",
+      "categoryId": "cat-bebidas",
+      "description": "Limón fresco con hierbabuena.",
+      "price": 55,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 1,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-cerveza-artesanal",
+      "slug": "cerveza-artesanal",
+      "name": "Cerveza Artesanal",
+      "categoryId": "cat-bebidas",
+      "description": "Selección local del golfo.",
+      "price": 95,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 2,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-vino-blanco-copa",
+      "slug": "vino-blanco-copa",
+      "name": "Vino Blanco (copa)",
+      "categoryId": "cat-bebidas",
+      "description": "Ideal para mariscos.",
+      "price": 180,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 3,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-flan-de-coco",
+      "slug": "flan-de-coco",
+      "name": "Flan de Coco",
+      "categoryId": "cat-postres",
+      "description": "Flan cremoso con coco rallado.",
+      "price": 85,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 0,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-pastel-de-chocolate",
+      "slug": "pastel-de-chocolate",
+      "name": "Pastel de Chocolate",
+      "categoryId": "cat-postres",
+      "description": "Pastel húmedo con ganache.",
+      "price": 95,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 1,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    },
+    {
+      "id": "demo-helado-de-vainilla",
+      "slug": "helado-de-vainilla",
+      "name": "Helado de Vainilla",
+      "categoryId": "cat-postres",
+      "description": "Con frutos rojos.",
+      "price": 70,
+      "photos": [],
+      "model": {
+        "status": "sin_modelo",
+        "notes": ""
+      },
+      "dimensions": {
+        "verified": false,
+        "notes": ""
+      },
+      "available": true,
+      "featured": false,
+      "tags": [],
+      "ingredients": [],
+      "ingredientsVerified": false,
+      "allergens": [],
+      "allergensVerified": false,
+      "effects": {
+        "steam": false
+      },
+      "order": 2,
+      "isDemo": true,
+      "updatedAt": "2026-11-25T17:39:32.049Z"
+    }
+  ],
+  "updatedAt": "2026-11-25T17:39:32.049Z"
+}
