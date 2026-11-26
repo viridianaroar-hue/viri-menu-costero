@@ -2,6 +2,8 @@
 
 Menú web para restaurante: el cliente escanea un QR, explora el menú, gira cada platillo en 3D y, si su teléfono lo permite, lo ve **sobre su mesa a escala real**. Sin instalar apps.
 
+> **En línea (piloto):** https://menu-costero.vercel.app · QR en [docs/qr](docs/qr)
+>
 > Estado: versión funcional con contenido de **demostración**. Falta cargar el menú real, fotos, modelos 3D reales y desplegar. Ver [docs/REPORTE.md](docs/REPORTE.md).
 
 ## Qué incluye

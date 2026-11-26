@@ -1,5 +1,16 @@
 # Despliegue
 
+## Estado actual (26-nov-2026)
+
+| Recurso | Valor |
+|---|---|
+| Sitio público | https://menu-costero.vercel.app (Vercel Hobby, proyecto `menu-costero`) |
+| Base de datos y archivos | Supabase, proyecto `menu-3d-ar` (us-east-1): tabla `menu_store` y bucket `menu-assets` creados |
+| QR | [docs/qr/qr-menu.svg](qr/qr-menu.svg) → `/menu` |
+| Variables configuradas | `SESSION_SECRET`, `SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_BUCKET`, `NEXT_PUBLIC_SITE_URL` |
+| **Pendiente (manual)** | `ADMIN_PASSWORD` y `SUPABASE_SERVICE_ROLE_KEY` en Vercel y volver a desplegar. Mientras tanto el menú sale de `data/seed.json` y el panel no puede guardar |
+| Despliegue automático | No activo: la cuenta de Vercel no tiene GitHub vinculado (Vercel → proyecto → Settings → Git) |
+
 Ruta recomendada: **Vercel + Supabase**. Tiempo estimado: 30–45 min la primera vez.
 
 ## Opciones
