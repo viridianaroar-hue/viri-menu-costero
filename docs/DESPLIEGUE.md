@@ -77,3 +77,20 @@ Solo imprime QR con la URL definitiva en **HTTPS**: sin HTTPS los navegadores bl
 - Bloqueo temporal tras 5 intentos fallidos (por instancia del servidor).
 - La `service_role` de Supabase solo existe en el servidor; los archivos se suben con URLs firmadas de un solo uso.
 - `/admin` con `noindex` y sin iframes; cámara y WebXR permitidas solo para el propio sitio.
+
+## Flujo de cambios y rollback
+
+**Flujo normal:** rama de trabajo → Pull Request → revisión → fusión a `main` → Vercel publica en producción automáticamente (≈ 1 min). Cada rama que no es `main` genera una *vista previa* protegida para revisar antes de fusionar.
+
+**Rollback (si una publicación falla):**
+
+| Vía | Tiempo | Cuándo |
+|---|---|---|
+| Vercel → proyecto `menu-costero` → **Deployments** → despliegue anterior en estado Ready → **⋯ → Instant Rollback** (o *Promote to Production*) | < 1 min | Primera opción: vuelve a la versión anterior sin recompilar y sin tocar variables ni datos |
+| GitHub → el Pull Request fusionado → **Revert** → fusionar el PR de reversión | 2–3 min | Para que `main` también refleje la versión anterior |
+
+Versión de referencia estable: commit `9857a9c` (despliegue `dpl_56mWDrS5HsyJpXGg2XdT2uxdfM3s`).
+
+El rollback **no afecta los datos**: el menú, las fotos y los modelos viven en Supabase, no en el código. Para revertir datos, usa un respaldo JSON (Panel → Ajustes → Descargar respaldo / Importar JSON).
+
+**Después de un rollback de emergencia**, Vercel deja de promover automáticamente nuevas publicaciones hasta que se vuelva a promover una manualmente; revisa el aviso en el panel de Vercel.
