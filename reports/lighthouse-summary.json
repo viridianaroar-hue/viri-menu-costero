@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-25T18:10:45.858Z",
+  "base": "http://localhost:3300",
+  "rows": [
+    {
+      "página": "/",
+      "rendimiento": 99,
+      "accesibilidad": 100,
+      "buenas prácticas": 100,
+      "seo": 100,
+      "LCP": "0.8 s",
+      "CLS": "0",
+      "TBT": "130 ms",
+      "peso total": "280 KB"
+    },
+    {
+      "página": "/menu",
+      "rendimiento": 99,
+      "accesibilidad": 100,
+      "buenas prácticas": 100,
+      "seo": 100,
+      "LCP": "0.8 s",
+      "CLS": "0",
+      "TBT": "110 ms",
+      "peso total": "283 KB"
+    },
+    {
+      "página": "/platillo/sopa-de-mariscos",
+      "rendimiento": 99,
+      "accesibilidad": 100,
+      "buenas prácticas": 100,
+      "seo": 100,
+      "LCP": "0.8 s",
+      "CLS": "0.019",
+      "TBT": "110 ms",
+      "peso total": "267 KB"
+    }
+  ]
+}

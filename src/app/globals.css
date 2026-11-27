@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de marca. Los valores reales se inyectan desde Ajustes (admin)
+ * como variables CSS en <html>; estos son los valores por defecto.
+ */
+:root {
+  --brand: #0f3b4c;
+  --brand-dark: #0a2a36;
+  --accent: #c9a227;
+  --surface: #f7f5f0;
+  --ink: #1b2328;
+  --muted: #5f6b73;
+  --line: #e5e1d8;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-accent: var(--accent);
+  /* Variante oscura del acento para TEXTO sobre fondos claros (contraste ≥ 4.5:1). */
+  --color-accent-ink: color-mix(in oklab, var(--accent) 55%, #120c00);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-padding-top: 8.5rem;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #ece8df 0%, #f6f3ec 50%, #ece8df 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Aparición suave */
+.fade-up {
+  animation: fadeUp 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Vapor sutil (solo decorativo, sobre el visor 3D de platillos calientes) */
+.steam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.steam span {
+  position: absolute;
+  bottom: 42%;
+  width: 18%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  filter: blur(10px);
+  opacity: 0;
+  animation: steam 5.5s ease-in-out infinite;
+}
+.steam span:nth-child(1) { left: 38%; animation-delay: 0s; }
+.steam span:nth-child(2) { left: 48%; animation-delay: 1.8s; }
+.steam span:nth-child(3) { left: 43%; animation-delay: 3.6s; }
+@keyframes steam {
+  0% { transform: translateY(20%) scale(0.6); opacity: 0; }
+  30% { opacity: 0.55; }
+  100% { transform: translateY(-70%) scale(1.3); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .steam { display: none; }
+}
+
+model-viewer {
+  --poster-color: transparent;
+  --progress-bar-color: var(--accent);
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
